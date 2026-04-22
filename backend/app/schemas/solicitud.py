@@ -12,4 +12,13 @@ class SolicitudResponse(BaseModel):
     estado_actual: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+
+class CambiarEstado(BaseModel):
+    estado: str
+    comentario: str
+    usuario_id: int
+
+
+# ESTADOS_VALIDOS = ["radicada", "en_revision", "aprobada", "rechazada"]
